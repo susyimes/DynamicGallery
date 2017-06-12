@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.susyimes.dynamicgallerylib.GalleryParent">
+
+    <com.susyimes.dynamicgallerylib.frame.SusSlideViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    </com.susyimes.dynamicgallerylib.frame.SusSlideViewPager>
+
+    <RelativeLayout
+
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#66ffffff"
+
+
+        >
+        <ImageView
+            android:layout_margin="15dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/backraw_webactivity"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/bottombar"
+        android:background="#66ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+
+        >
+        <ImageView
+            android:layout_margin="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/backraw_webactivity"/>
+    </RelativeLayout>
+
+</RelativeLayout>
