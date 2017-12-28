@@ -1,6 +1,7 @@
 package com.susyimes.dynamicgallerylib;
 
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
@@ -27,13 +28,13 @@ import com.bumptech.glide.Glide;
 
 
 import com.susyimes.dynamicgallerylib.bus.DAction;
-import com.susyimes.dynamicgallerylib.bus.DBus;
+import com.susyimes.dynamicgallerylib.bus.RxBusDefault;
 import com.susyimes.dynamicgallerylib.frame.SusNestedScrollView;
 import com.susyimes.dynamicgallerylib.utils.Dp2px;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.Subscription;
+
 import uk.co.senab.photoview.*;
 import uk.co.senab.photoview.BuildConfig;
 
@@ -57,7 +58,7 @@ public class GalleryChild extends Fragment {
     private int mPointerId;
     private int screenHeight;
     private boolean canBack=false;
-    Subscription subscription;
+
     private boolean backtoblack=false;
     private int totaloffset=0;
     private int lastoffset=0;
@@ -242,17 +243,18 @@ public class GalleryChild extends Fragment {
         imageview.setOnViewTapListener(new PhotoViewAttacher.OnViewTapListener() {
             @Override
             public void onViewTap(View view, float x, float y) {
-                DBus.getDefault().post(new DAction("show"));
+                RxBusDefault.getDefault().post(new DAction("show"));
             }
         });
 
 
         nested_scrollview.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @SuppressLint("RestrictedApi")
             @Override
             public void onScrollChange(NestedScrollView v, int scrollX, final int scrollY, int oldScrollX, int oldScrollY) {
 
                 totaloffset+=scrollY-oldScrollY;
-                DBus.getDefault().post(new DAction("offset",(oldScrollY-scrollY)));
+                RxBusDefault.getDefault().post(new DAction("offset",(oldScrollY-scrollY)));
 
                 /*if (v.computeVerticalScrollOffset()>1812) {
                     ViewCompat.offsetTopAndBottom(view, (oldScrollY-scrollY));
