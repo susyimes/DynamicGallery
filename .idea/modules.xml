@@ -3,10 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/DynamicGallery.iml" filepath="$PROJECT_DIR$/.idea/DynamicGallery.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DynamicGallery.iml" filepath="$PROJECT_DIR$/DynamicGallery.iml" />
+      <module fileurl="file://C:\project_ef_new\DynamicGallery\DynamicGallery.iml" filepath="C:\project_ef_new\DynamicGallery\DynamicGallery.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dynamicgallerylib/dynamicgallerylib.iml" filepath="$PROJECT_DIR$/dynamicgallerylib/dynamicgallerylib.iml" />
       <module fileurl="file://$PROJECT_DIR$/dynamicgallerylib/dynamicgallerylib.iml" filepath="$PROJECT_DIR$/dynamicgallerylib/dynamicgallerylib.iml" />
     </modules>
   </component>

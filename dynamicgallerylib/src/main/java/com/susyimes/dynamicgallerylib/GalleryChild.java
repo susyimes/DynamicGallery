@@ -27,6 +27,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 
+import com.github.chrisbanes.photoview.OnPhotoTapListener;
+import com.github.chrisbanes.photoview.PhotoView;
+import com.github.chrisbanes.photoview.PhotoViewAttacher;
 import com.susyimes.dynamicgallerylib.bus.DAction;
 import com.susyimes.dynamicgallerylib.bus.RxBusDefault;
 import com.susyimes.dynamicgallerylib.frame.SusNestedScrollView;
@@ -35,8 +38,7 @@ import com.susyimes.dynamicgallerylib.utils.Dp2px;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import uk.co.senab.photoview.*;
-import uk.co.senab.photoview.BuildConfig;
+
 
 
 /**
@@ -239,10 +241,9 @@ public class GalleryChild extends Fragment {
         });
 
 
-
-        imageview.setOnViewTapListener(new PhotoViewAttacher.OnViewTapListener() {
+        imageview.setOnPhotoTapListener(new OnPhotoTapListener() {
             @Override
-            public void onViewTap(View view, float x, float y) {
+            public void onPhotoTap(ImageView view, float x, float y) {
                 RxBusDefault.getDefault().post(new DAction("show"));
             }
         });
